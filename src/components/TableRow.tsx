@@ -13,9 +13,9 @@ export const TableRow = ({first, second, third, label}: ITableRowProps): JSX.Ele
     return (
         <tr>
             <td>{label}</td>
-            <td className={(first < second && first < third) ? 'minimum': ''}>{first}</td>
-            <td className={(second < first && second < third) ? 'minimum': ''}>{second}</td>
-            <td className={(third < second && third < first) ? 'minimum': ''}>{third}</td>
+            <td className={(first < second && first < third) ? 'minimalValue': ''}>{first}</td>
+            <td className={(second < first && second < third) ? 'minimalValue': ''}>{second}</td>
+            <td className={(third < second && third < first) ? 'minimalValue': ''}>{third}</td>
         </tr>
     )
 }

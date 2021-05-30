@@ -19,15 +19,15 @@ const initialRates:IRates = {
     EUR: 0,
 }
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
     const [first, setFirst] = useState<IRates>(initialRates);
     const [second, setSecond] = useState<IRates>(initialRates);
     const [third, setThird] = useState<IRates>(initialRates);
 
     useEffect(() => {
-        getData("first/poll", setFirst);
-        getData("second/poll", setSecond);
-        getData("third/poll", setThird);
+        getData("first", setFirst);
+        getData("second", setSecond);
+        getData("third", setThird);
     }, []);
 
 
@@ -39,10 +39,11 @@ const App: React.FC = () => {
             .catch(e => {
                 console.log(e);
             });
+        await getData(market,setter);
     }
-    console.log(first)
-    console.log(second)
-    console.log(third)
+    console.log('first/poll',first)
+    console.log('second/poll',second)
+    console.log('third/poll',third)
 
     return (
 
@@ -54,4 +55,3 @@ const App: React.FC = () => {
     );
 }
 
-export default App;
