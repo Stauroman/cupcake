@@ -20,6 +20,7 @@ const initialRates:IRates = {
 }
 
 export const App: React.FC = () => {
+    //для каждого маркета создаем соответствующее поле стейта, записываем в него объект rates
     const [first, setFirst] = useState<IRates>(initialRates);
     const [second, setSecond] = useState<IRates>(initialRates);
     const [third, setThird] = useState<IRates>(initialRates);
@@ -41,9 +42,6 @@ export const App: React.FC = () => {
             });
         await getData(market,setter);
     }
-    console.log('first/poll',first)
-    console.log('second/poll',second)
-    console.log('third/poll',third)
 
     return (
 

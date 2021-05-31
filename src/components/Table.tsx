@@ -9,11 +9,15 @@ export interface ITableProps {
 }
 
 export const Table = ({first, second, third}: ITableProps): JSX.Element => {
+
     const getCellResult = (a: number, b: number): number => {
         if (a === 0 || b === 0) {
             return 0;
         } else {
+            //округляем до 2х знаков после запятой,
+            // отрицательные значения приводим к положительным
             return parseFloat(Math.abs(a / b).toFixed(2))
+
         }
     }
     return (
